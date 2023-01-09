@@ -1,0 +1,416 @@
+.warp {
+    width: 95%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:767px) {
+    .warp {
+        width: 90%;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+.black-bg {
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
+    left: 0;
+
+}
+
+header {
+    background-color: black;
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+header .info_top{
+    color: white;
+    font-weight: bold;
+}
+
+header .gnb{
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "logo gnb-menu menu"
+    "search search search";
+}
+
+header .gnb .logo {
+    grid-area: logo;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+header .gnb .gnb-menu {
+    grid-area: gnb-menu;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+header .gnb .gnb-menu ul{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+header .gnb .gnb-menu ul li{
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding-bottom:10px;
+}
+
+
+
+header .gnb .gnb-menu ul li:hover {
+    color:pink;
+}
+
+header .gnb .gnb-menu ul li:hover::before{
+    content: "";
+    height: 2px;
+    width: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+/* 오버로딩 */
+header .gnb .gnb-menu ul .active:hover {
+    color:white;
+}
+
+header .gnb .gnb-menu ul .active:hover::before{
+    width: 15px;
+}
+
+
+
+header .gnb .gnb-menu ul .active::before{
+    content: "";
+    height: 2px;
+    width: 15px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+/* 메뉴*/
+header .gnb .menu {
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 80%;
+    margin-left: 20%;
+}
+
+header .gnb .menu .profile {
+    background-color: white;
+    color:gray;
+    padding: 5px;
+    border-radius:30px;
+    color:black;
+}
+
+header .gnb .menu .menu-hover{
+    padding: 0 20px;
+}
+
+
+header .gnb .menu .menu-hover:hover {
+    background-color: rgba(172, 172, 172, 0.8);
+    border-radius: 30px;
+}
+
+
+
+
+
+/* search */
+header .gnb .search {
+    grid-area: search;
+    width: 70%;
+    margin: 0 auto;
+}
+
+header .gnb .search .searchul{
+    background-color: white;
+    color: black;
+    display: flex;
+    border-radius: 50px;
+}
+
+header .gnb .search .searchul li{
+    width: 25%;
+    text-align: left;
+    padding: 20px 50px 20px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    position: relative;
+}
+
+header .gnb .search .searchul li::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height:calc(100% - calc( 20px * 2 ));
+    right: 0;
+    top:50%;
+    transform: translate(0,-50%);
+    background-color: pink;
+}
+
+header .gnb .search .searchul li:last-of-type::after{
+    display: none;
+}
+
+header .gnb .search .searchul li:hover{
+    background-color: pink;
+}
+
+header .gnb .search .searchul span{
+    color: gray;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* notice */
+.notice {
+    background-color: pink;
+    border-radius: 14px;
+    text-align: center;
+    height: 320px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notice p {
+    font-size: 1.5rem;
+    color:white;
+    font-weight: bold;
+    line-height: 1.8rem;
+
+    margin-bottom: 2rem;
+}
+
+.notice button {
+    border: 1px solid white;
+    padding: 5px 15px;
+    color:white;
+    background-color: inherit;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* mainBanner */
+.mainBanner {
+    height: 600px;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding-bottom: 50px;
+
+    background: url(https://a0.muscache.com/im/pictures/5b6242a9-8832-432b-ac79-38de2a3d0b0d.jpg?im_w=720);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.mainBanner .content{
+    color: black;
+    text-align: center;
+}
+
+.mainBanner .content p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.mainBanner .content button{
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 24px;
+}
+
+.mainBanner .content button span{
+    background: linear-gradient(to right, #d21c80, #170f28); 
+
+    -webkit-background-clip: -webkit-text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* idea */
+.city {
+    display: flex;
+    width: 100%;
+    overflow:auto;
+}
+
+.city .card {
+    width: 25%;
+    min-width: 250px;
+    margin-right: 30px;
+}
+
+.city .card:nth-last-of-type(1){
+    margin-right: 0;
+}
+
+.city .card img {
+    width: 100%;
+    height: 150px;
+    display: block;
+    border-radius: 15px 15px 0 0 ;
+}
+
+.city .card figcaption{
+    border-radius: 0 0 15px 15px;
+    height: calc(200px - calc(24px*2));
+    height: 150px;
+    padding: 24px 16px;
+}
+
+.city .card figcaption p{
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+.city .card figcaption span{
+    font-size: 1rem;
+}
+
+@media screen and (max-width:767px) {
+    .city {
+        -ms-overflow-style: none; /*ie*/
+        scrollbar-width: none; /*firefox*/
+    }
+    .city::-webkit-scrollbar{
+        display: none;
+    }
+
+    .city .card {
+        width: 25%;
+        min-width: 250px;
+        margin-right: 15px;
+    }
+
+    .city .card figcaption p{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: bold;
+        padding-bottom: 0.5rem;
+    }
+    
+    .city .card figcaption span{
+        font-size: 1rem;
+    }
+    
+    
+}
+
+
+/* expression */
+.expression {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:25px;
+    grid-template-areas: 
+    "heading heading"
+    "div1 div2";
+}
+
+@media screen and (max-width:576px) {
+    .expression {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        grid-gap:15px;
+        grid-template-areas: 
+        "heading"
+        "div1" 
+        "div2";
+    }
+    
+}
+
+.expression .photoDiv{
+    height: calc(700px - calc(60px*2));
+    padding: 60px;
+    border-radius: 14px;
+}
+
+.expression .photoDiv:nth-of-type(1){
+    background-image: url(https://a0.muscache.com/im/pictures/miso/Hosting-52086975/original/017465f1-e5b3-43ff-8d92-facd828f8fc2.jpeg?im_w=720);
+    background-repeat: ;
+}
+
+.expression .photoDiv:nth-of-type(2){
+    background-image: url(https://a0.muscache.com/im/pictures/fb860347-88b9-4a1a-acfe-d518f3f77072.jpg?im_w=720);
+    background-repeat: ;
+}
+
+.expression .photoDiv p {
+    color: wheat;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 3rem;
+}
+
+.expression .photoDiv button {
+    color: black;
+    font-weight: bold;
+    border: none;
+    background-color: wheat;
+    padding: 8px 15px;
+    border-radius: 14px;
+    margin-top: 1rem;
+
+}
+
+.expression .photoDiv button:hover{
+    background-color: #d21c80;
+}
+
