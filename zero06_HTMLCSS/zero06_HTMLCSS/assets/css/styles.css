@@ -200,6 +200,7 @@ textarea::-webkit-outer-spin-button {
   background-color: #03c75a;
   color: #fff;
   z-index: 5000;
+  background-color: pink;
 }
 .header-area .place-header {
   display: flex;
